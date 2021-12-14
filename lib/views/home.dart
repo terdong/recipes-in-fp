@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipes_in_fp/models/recipe.dart';
+import 'package:recipes_in_fp/views/recipe_detail/recipe_detail.dart';
 import 'package:recipes_in_fp/widgets/recipe_card.dart';
 
 class HomePage extends GetView {
@@ -15,18 +16,10 @@ class HomePage extends GetView {
           child: ListView.builder(
             itemCount: Recipe.samples.length,
             itemBuilder: (BuildContext context, int index) {
-              //return RecipeCardWidget(recipe: Recipe.samples[index]);
-              return GestureDetector(
-                //return InkWell(
-                onTap: () => Get.to(const Text('Detail Page'))
-                //     Get.defaultDialog(
-                //   title: 'Detail page',
-                //   content: Text('Detail Page'),
-                // )
-                /*  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Text('Detail Page');
-                  })); */
-                ,
+              //return GestureDetector(
+              return InkWell(
+                onTap: () =>
+                    Get.to(() => RecipeDetail(recipe: Recipe.samples[index])),
                 child: RecipeCardWidget(recipe: Recipe.samples[index]),
               );
             },
