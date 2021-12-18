@@ -2,29 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipes_in_fp/models/recipe.dart';
-import 'package:recipes_in_fp/views/recipe_detail/recipe_detail.dart';
+import 'package:recipes_in_fp/modules/home/controllers/home_controller.dart';
+import 'package:recipes_in_fp/routes/app_pages.dart';
 import 'package:recipes_in_fp/widgets/recipe_card.dart';
 
-class HomePage extends GetView {
-  const HomePage({Key? key}) : super(key: key);
+class HomeView extends GetResponsiveView<HomeController> {
+  HomeView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('HomePage')),
-        body: SafeArea(
-          child: ListView.builder(
-            itemCount: Recipe.samples.length,
-            itemBuilder: (BuildContext context, int index) {
-              //return GestureDetector(
-              return InkWell(
-                onTap: () =>
-                    Get.to(() => RecipeDetail(recipe: Recipe.samples[index])),
-                child: RecipeCardWidget(recipe: Recipe.samples[index]),
-              );
-            },
-          ),
-        ));
+  Widget builder() {
+    return ListView.builder(
+      itemCount: Recipe.samples.length,
+      itemBuilder: (BuildContext context, int index) {
+        //return GestureDetector(
+        return InkWell(
+          onTap: () =>
+              Get.toNamed(Routes.detail, arguments: Recipe.samples[index]),
+          /* Get.to(() => RecipeDetail(recipe: Recipe.samples[index])) */
+          child: RecipeCardWidget(recipe: Recipe.samples[index]),
+        );
+      },
+    );
   }
 
   Widget buildRecipeCard(Recipe recipe) {
