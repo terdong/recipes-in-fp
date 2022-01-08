@@ -1,8 +1,12 @@
+import 'dart:io';
+
+import 'package:desktop_window/desktop_window.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import 'package:recipes_in_fp/routes/app_pages.dart';
-import 'package:recipes_in_fp/utils/custom_scroll_behavior.dart';
 
 /* void main() => runApp(GetMaterialApp(
       title: "Application",
@@ -17,11 +21,39 @@ import 'package:recipes_in_fp/utils/custom_scroll_behavior.dart';
       //initialRoute: Routes.root,
       home: RootView(),
     )); */
-void main() => runApp(DevicePreview(
-      // enabled: true,
-      defaultDevice: Devices.android.samsungGalaxyS20,
-      builder: (context) => const MyApp(), // Wrap your app
-    ));
+Future<void> main() async {
+  var logger = Logger();
+  // WidgetsFlutterBinding.ensureInitialized();
+
+  // if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+  //   Size size = await DesktopWindow.getWindowSize();
+  //   logger.d("size: $size");
+  //   await DesktopWindow.setWindowSize(const Size(500, 500));
+  //   await DesktopWindow.setMinWindowSize(const Size(700, 500));
+  //   await DesktopWindow.setMaxWindowSize(Size.infinite);
+  //   // setWindowTitle('Todos');
+  //   // setWindowMinSize(const Size(700, 500));
+  //   // setWindowMaxSize(Size.infinite);
+  // }
+
+  // logger.v("Verbose log");
+
+  logger.d("Debug log");
+
+  // logger.i("Info log");
+
+  // logger.w("Warning log");
+
+  // logger.e("Error log");
+
+  // logger.wtf("What a terrible failure log");
+
+  runApp(DevicePreview(
+    // enabled: true,
+    defaultDevice: Devices.android.samsungGalaxyS20,
+    builder: (context) => const MyApp(), // Wrap your app
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -30,7 +62,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Application",
-      scrollBehavior: CustomScrollBehavior(),
+      // scrollBehavior: CustomScrollBehavior(),
+      scrollBehavior: ScrollConfiguration.of(context).copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+        },
+      ),
       //debugShowCheckedModeBanner: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,

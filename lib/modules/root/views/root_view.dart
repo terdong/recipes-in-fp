@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:get/get.dart';
 import 'package:recipes_in_fp/modules/home/views/home_view.dart';
 import 'package:recipes_in_fp/modules/root/controllers/root_controller.dart';
+import 'package:recipes_in_fp/widgets/foo.dart';
 
 class RootView extends GetResponsiveView<RootController> {
   RootView({Key? key}) : super(key: key, alwaysUseBuilder: false);
@@ -26,7 +28,8 @@ class RootView extends GetResponsiveView<RootController> {
           child: Center(
             child: Container(
                 //padding: const EdgeInsets.all(20),
-                constraints: const BoxConstraints(maxWidth: 800),
+                //constraints: const BoxConstraints(maxWidth: 1000),
+                //child: const Foo(5)),
                 child: HomeView()),
           ),
         ));
