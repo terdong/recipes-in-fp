@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:recipes_in_fp/models/ingredient.dart';
 import 'package:recipes_in_fp/models/recipe.dart';
+import 'package:recipes_in_fp/utils/logger_provider.dart';
 import 'package:recipes_in_fp/views/recipe_detail/recipe_detail_controller.dart';
 
-class RecipeDetail extends GetResponsiveView<RecipeDetailController> {
+class RecipeDetail extends GetResponsiveView<RecipeDetailController>
+    with LoggerProvider {
 /*   const RecipeDetail({Key? key, required this.recipe}) : super(key: key); */
   RecipeDetail({Key? key}) : super(key: key);
 
@@ -35,7 +38,8 @@ class RecipeDetail extends GetResponsiveView<RecipeDetailController> {
                       padding: const EdgeInsets.all(7.0),
                       itemCount: recipe.ingredients.length,
                       itemBuilder: (context, index) {
-                        final ingredient = recipe.ingredients[index];
+                        final Ingredient ingredient = recipe.ingredients[index];
+                        logv(ingredient.toJson().toString());
                         return Obx(() => Text(
                             '${ingredient.quantity * controller.sliderVal} ${ingredient.measure} ${ingredient.name}'));
                       },

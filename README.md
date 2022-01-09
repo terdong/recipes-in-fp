@@ -1,10 +1,9 @@
-# recipes_in_fp
+# recipes_with_getx
 
-이 프로젝트는 Flutter_Apprentice v2책의 "Chapter 2: Hello, Flutter"에 있는 recipes 프로젝트를 GetX와 fpdart 패키지를 이용하여 재구현한 프로젝트입니다.(This project is a reimplementation of the recipes project in "Chapter 2: Hello, Flutter" of the Flutter_Apprentice v2 book using GetX and fpdart packages.)
+이 프로젝트는 Flutter_Apprentice v2책의 "Chapter 2: Hello, Flutter"에 있는 recipes 프로젝트를 GetX를 이용하여 재구현한 연습용 프로젝트입니다.(This project is a reimplementation of the recipes project in "Chapter 2: Hello, Flutter" of the Flutter_Apprentice v2 book using GetX packages.)
 
 ## 사용한 패키지들(Packages used)
 - [GetX](https://github.com/jonataslaw/getx)
-- [fpdart](https://github.com/SandroMaglione/fpdart)
 
 <!-- ## Getting Started
 

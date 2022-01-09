@@ -21,7 +21,7 @@ import 'package:recipes_in_fp/routes/app_pages.dart';
       //initialRoute: Routes.root,
       home: RootView(),
     )); */
-Future<void> main() async {
+void main() {
   var logger = Logger();
   // WidgetsFlutterBinding.ensureInitialized();
 
@@ -58,8 +58,17 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  Future _getWindowSize() async {
+    Size size = await DesktopWindow.getWindowSize();
+    print("size: $size");
+    await DesktopWindow.setWindowSize(const Size(500, 1000));
+    await DesktopWindow.setMinWindowSize(const Size(1000, 1000));
+    await DesktopWindow.setMaxWindowSize(Size.infinite);
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getWindowSize();
     return GetMaterialApp(
       title: "Application",
       // scrollBehavior: CustomScrollBehavior(),
