@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipes_in_fp/models/recipe.dart';
-import 'package:recipes_in_fp/modules/home/controllers/home_controller.dart';
-import 'package:recipes_in_fp/routes/app_pages.dart';
-import 'package:recipes_in_fp/widgets/recipe_card.dart';
+import 'package:recipes_in_getx/models/recipe.dart';
+import 'package:recipes_in_getx/modules/home/controllers/home_controller.dart';
+import 'package:recipes_in_getx/routes/app_pages.dart';
+import 'package:recipes_in_getx/widgets/recipe_card.dart';
 
 class HomeView extends GetResponsiveView<HomeController> {
   HomeView({Key? key}) : super(key: key);

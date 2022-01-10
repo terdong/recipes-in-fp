@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:get/get.dart';
-import 'package:recipes_in_fp/modules/home/views/home_view.dart';
-import 'package:recipes_in_fp/modules/root/controllers/root_controller.dart';
-import 'package:recipes_in_fp/widgets/foo.dart';
-import 'package:recipes_in_fp/widgets/side_menu.dart';
+import 'package:recipes_in_getx/modules/home/views/home_view.dart';
+import 'package:recipes_in_getx/modules/root/controllers/root_controller.dart';
+import 'package:recipes_in_getx/widgets/foo.dart';
+import 'package:recipes_in_getx/widgets/side_menu.dart';
 
 class RootView extends GetResponsiveView<RootController> {
   RootView({Key? key}) : super(key: key, alwaysUseBuilder: false);

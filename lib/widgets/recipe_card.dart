@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipes_in_fp/models/recipe.dart';
+import 'package:recipes_in_getx/models/recipe.dart';
 
 class RecipeCardWidget extends StatelessWidget {
   const RecipeCardWidget({Key? key, required this.recipe}) : super(key: key);

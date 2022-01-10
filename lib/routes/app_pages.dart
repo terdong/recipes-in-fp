@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:recipes_in_fp/modules/root/bindings/root_binding.dart';
-import 'package:recipes_in_fp/modules/root/views/root_view.dart';
-import 'package:recipes_in_fp/views/recipe_detail/recipe_detail.dart';
+import 'package:recipes_in_getx/modules/root/bindings/root_binding.dart';
+import 'package:recipes_in_getx/modules/root/views/root_view.dart';
+import 'package:recipes_in_getx/views/recipe_detail/recipe_detail.dart';
 
 part './app_routes.dart';
 

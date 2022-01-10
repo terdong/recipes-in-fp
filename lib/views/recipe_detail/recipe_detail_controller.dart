@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:recipes_in_fp/utils/logger_provider.dart';
+import 'package:recipes_in_getx/utils/logger_provider.dart';
 
 class RecipeDetailController extends GetxController with LoggerProvider {
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:recipes_in_fp/models/ingredient.dart';
-import 'package:recipes_in_fp/models/recipe.dart';
-import 'package:recipes_in_fp/utils/logger_provider.dart';
-import 'package:recipes_in_fp/views/recipe_detail/recipe_detail_controller.dart';
+import 'package:recipes_in_getx/models/ingredient.dart';
+import 'package:recipes_in_getx/models/recipe.dart';
+import 'package:recipes_in_getx/utils/logger_provider.dart';
+import 'package:recipes_in_getx/views/recipe_detail/recipe_detail_controller.dart';
 
 class RecipeDetail extends GetResponsiveView<RecipeDetailController>
     with LoggerProvider {
